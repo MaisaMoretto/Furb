@@ -1,7 +1,7 @@
 package pilha.q2.lista;
 
-import Unidade01.pilha.Pilha;
-import Unidade01.pilha.PilhaVaziaException;
+import pilha.Pilha;
+import pilha.PilhaVaziaException;
 
 public class PilhaLista<T> implements Pilha<T> {
     private ListaSimplesmenteEncadeada<T> lista;

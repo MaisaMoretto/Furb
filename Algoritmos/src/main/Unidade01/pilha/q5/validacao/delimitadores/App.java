@@ -1,4 +1,4 @@
-package Unidade01.pilha.q5.validacao.delimitadores;
+package pilha.q5.validacao.delimitadores;
 
 import java.util.Scanner;
 

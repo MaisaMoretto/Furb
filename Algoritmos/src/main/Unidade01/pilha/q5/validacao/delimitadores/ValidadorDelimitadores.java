@@ -1,6 +1,6 @@
-package Unidade01.pilha.q5.validacao.delimitadores;
+package pilha.q5.validacao.delimitadores;
 
-import Unidade01.pilha.q1.vetor.PilhaVetor;
+import pilha.q1.vetor.PilhaVetor;
 
 public class ValidadorDelimitadores {
     public boolean validar(String expressao) {

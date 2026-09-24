@@ -1,4 +1,4 @@
-package Unidade02.Arvore;
+package Arvore;
 
 public class NoArvoreBinaria<T> {
     private T info;

@@ -1,8 +1,8 @@
 package pilha.q1.vetor;
 
-import Unidade01.pilha.Pilha;
-import Unidade01.pilha.PilhaCheiaException;
-import Unidade01.pilha.PilhaVaziaException;
+import pilha.Pilha;
+import pilha.PilhaCheiaException;
+import pilha.PilhaVaziaException;
 
 public class PilhaVetor<T> implements Pilha<T> {
     private Object[] info;
