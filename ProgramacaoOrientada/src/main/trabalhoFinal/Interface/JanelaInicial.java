@@ -1,4 +1,4 @@
-package poo.trabalhoFinal.Interface;
+package Interface;
 
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -6,11 +6,11 @@ import javax.swing.JOptionPane;
 
 public class JanelaInicial extends javax.swing.JFrame {
 
-    private poo.trabalhoFinal.Usabilidade.ControleFinanceiro controle;
+    private Usabilidade.ControleFinanceiro controle;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaInicial.class.getName()); //add pelo netbeans
     private CardLayout cardLayout;
 
-    private poo.trabalhoFinal.Usabilidade.LancamentoRepository repositorio = new poo.trabalhoFinal.Usabilidade.LancamentoRepository();
+    private Usabilidade.LancamentoRepository repositorio = new Usabilidade.LancamentoRepository();
 
     public JanelaInicial() {
         initComponents();
@@ -715,7 +715,7 @@ public class JanelaInicial extends javax.swing.JFrame {
 
         java.text.NumberFormat fmt = java.text.NumberFormat.getCurrencyInstance(new java.util.Locale("pt", "BR"));
 
-        for (poo.trabalhoFinal.Usabilidade.Receita r : controle.receitas()) {
+        for (Usabilidade.Receita r : controle.receitas()) {
             String valor = fmt.format(r.getValor());
             String data = r.getData().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             String categoria = r.getCategoria().toString(); // usa o toString() do enum
@@ -736,7 +736,7 @@ public class JanelaInicial extends javax.swing.JFrame {
 
         java.text.NumberFormat fmt = java.text.NumberFormat.getCurrencyInstance(new java.util.Locale("pt", "BR"));
 
-        for (poo.trabalhoFinal.Usabilidade.Despesa r : controle.despesas()) {
+        for (Usabilidade.Despesa r : controle.despesas()) {
             String valor = fmt.format(r.getValor());
             String data = r.getData().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             String categoria = r.getCategoria().toString(); // usa o toString() do enum
@@ -759,10 +759,10 @@ public class JanelaInicial extends javax.swing.JFrame {
         java.text.NumberFormat fmt = java.text.NumberFormat.getCurrencyInstance(new java.util.Locale("pt", "BR"));
         java.time.format.DateTimeFormatter dtf = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        ArrayList<poo.trabalhoFinal.Usabilidade.Lancamento> extrato = controle.ordenarExtrato();
+        ArrayList<Usabilidade.Lancamento> extrato = controle.ordenarExtrato();
 
         for (int i = 0; i < extrato.size(); i++) {
-            poo.trabalhoFinal.Usabilidade.Lancamento l = extrato.get(i);
+            Usabilidade.Lancamento l = extrato.get(i);
 
             String data = l.getData().format(dtf);
             String descricao = l.getDescricao();
@@ -771,7 +771,7 @@ public class JanelaInicial extends javax.swing.JFrame {
 
             // Determina tipo
             String tipo;
-            if (l.getTipo() == poo.trabalhoFinal.Usabilidade.Tipo.RECEITA) {
+            if (l.getTipo() == Usabilidade.Tipo.RECEITA) {
                 tipo = "Receita";
             } else {
                 tipo = "Despesa";
@@ -779,11 +779,11 @@ public class JanelaInicial extends javax.swing.JFrame {
 
             // Determina categoria
             String categoria;
-            if (l instanceof poo.trabalhoFinal.Usabilidade.Receita) {
-                poo.trabalhoFinal.Usabilidade.Receita r = (poo.trabalhoFinal.Usabilidade.Receita) l;
+            if (l instanceof Usabilidade.Receita) {
+                Usabilidade.Receita r = (Usabilidade.Receita) l;
                 categoria = r.getCategoria().toString();
             } else {
-                poo.trabalhoFinal.Usabilidade.Despesa d = (poo.trabalhoFinal.Usabilidade.Despesa) l;
+                Usabilidade.Despesa d = (Usabilidade.Despesa) l;
                 categoria = d.getCategoria().toString();
             }
 
@@ -821,8 +821,8 @@ public class JanelaInicial extends javax.swing.JFrame {
         try {
             double valor = Double.parseDouble(valorStr);
 
-            poo.trabalhoFinal.Usabilidade.CategoriaReceita cat
-                    = poo.trabalhoFinal.Usabilidade.CategoriaReceita.fromDescricao(
+            Usabilidade.CategoriaReceita cat
+                    = Usabilidade.CategoriaReceita.fromDescricao(
                             categoriaChoice.getSelectedItem()
                     );
 
@@ -830,7 +830,7 @@ public class JanelaInicial extends javax.swing.JFrame {
                     data, java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")
             );
 
-            poo.trabalhoFinal.Usabilidade.Receita receita = new poo.trabalhoFinal.Usabilidade.Receita(
+            Usabilidade.Receita receita = new Usabilidade.Receita(
                     descricao, valor, dataConvertida, cat
             );
 
@@ -893,8 +893,8 @@ public class JanelaInicial extends javax.swing.JFrame {
             double valor = Double.parseDouble(valorStr);
 
             // Instancia a receita — se os dados forem inválidos, o construtor lança exceção
-            poo.trabalhoFinal.Usabilidade.CategoriaDespesa cat
-                    = poo.trabalhoFinal.Usabilidade.CategoriaDespesa.fromDescricao(
+            Usabilidade.CategoriaDespesa cat
+                    = Usabilidade.CategoriaDespesa.fromDescricao(
                             despesaCategoriaChoice.getSelectedItem()
                     );
 
@@ -902,7 +902,7 @@ public class JanelaInicial extends javax.swing.JFrame {
                     data, java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")
             );
 
-            poo.trabalhoFinal.Usabilidade.Despesa despesa = new poo.trabalhoFinal.Usabilidade.Despesa(
+            Usabilidade.Despesa despesa = new Usabilidade.Despesa(
                     descricao, valor, dataConvertida, cat
             );
 

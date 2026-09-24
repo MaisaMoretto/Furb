@@ -1,4 +1,4 @@
-package poo.trabalhoFinal.Usabilidade;
+package Usabilidade;
 
 import java.time.LocalDate;
 

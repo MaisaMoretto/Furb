@@ -1,4 +1,4 @@
-package poo.trabalhoFinal.Usabilidade;
+package Usabilidade;
 
 public enum CategoriaReceita {
     SALARIO("Salário"),
