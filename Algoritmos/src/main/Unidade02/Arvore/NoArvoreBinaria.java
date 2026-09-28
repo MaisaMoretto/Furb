@@ -10,6 +10,9 @@ public class NoArvoreBinaria<T> {
         this.esq = esq;
         this.dir = dir;
     }
+    public NoArvoreBinaria(T info) {
+        this(info, null, null);
+    }
     public T getInfo() {
         return info;
     }
