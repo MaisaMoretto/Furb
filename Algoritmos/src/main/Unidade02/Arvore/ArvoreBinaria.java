@@ -7,6 +7,10 @@ public class ArvoreBinaria<T> {
         this.raiz = null;
     }
 
+    public NoArvoreBinaria<T> getRaiz() {
+        return raiz;
+    }
+
     public void setRaiz(NoArvoreBinaria<T> raiz) {
         this.raiz = raiz;
     }
@@ -23,14 +27,14 @@ public class ArvoreBinaria<T> {
         if (no == null){
             return false;
         } else {
-            return no.getInfo().equals(info)
+            return (no.getInfo().equals(info))
                     || pertence(no.getEsq(), info)
                     || pertence(no.getDir(), info);
         }
     }
 
     public String toString(){
-        return  arvorePre(raiz);
+        return arvorePre(raiz);
     }
 
     private String arvorePre(NoArvoreBinaria<T> no){
