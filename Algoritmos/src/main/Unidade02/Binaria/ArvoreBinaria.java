@@ -1,4 +1,4 @@
-package Arvore;
+package Binaria;
 
 public class ArvoreBinaria<T> {
     private NoArvoreBinaria<T> raiz;

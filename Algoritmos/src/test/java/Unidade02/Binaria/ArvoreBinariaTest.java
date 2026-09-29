@@ -1,7 +1,7 @@
-package Unidade02.Arvore;
+package Unidade02.Binaria;
 
-import Arvore.ArvoreBinaria;
-import Arvore.NoArvoreBinaria;
+import Binaria.ArvoreBinaria;
+import Binaria.NoArvoreBinaria;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
