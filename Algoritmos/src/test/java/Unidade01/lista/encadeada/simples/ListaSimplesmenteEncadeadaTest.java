@@ -1,7 +1,7 @@
-package Unidade01.lista.encadeada.exe01;
+package Unidade01.lista.encadeada.simples;
 
-import lista.encadeada.exe01.ListaSimplesmenteEncadeada;
-import lista.encadeada.exe01.NoListaSimplesmente;
+import lista.encadeada.simples.ListaSimplesmenteEncadeada;
+import lista.encadeada.simples.NoListaSimplesmente;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

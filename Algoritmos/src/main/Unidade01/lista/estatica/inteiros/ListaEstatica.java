@@ -1,4 +1,4 @@
-package lista.estatica.exe01;
+package lista.estatica.inteiros;
 
 public class ListaEstatica {
 

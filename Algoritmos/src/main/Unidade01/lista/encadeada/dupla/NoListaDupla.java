@@ -1,4 +1,4 @@
-package lista.encadeada.exe02;
+package lista.encadeada.dupla;
 
 public class NoListaDupla<T> {
     private T info;

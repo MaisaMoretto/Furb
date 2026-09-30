@@ -1,4 +1,4 @@
-package lista.encadeada.exe01;
+package lista.encadeada.simples;
 
 public class ListaSimplesmenteEncadeada<T> {
     private NoListaSimplesmente<T> primeiro;

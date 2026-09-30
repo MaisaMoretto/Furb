@@ -1,4 +1,4 @@
-package lista.estatica.exe02;
+package lista.estatica.generica;
 
 public class ListaEstatica<T> {
 
