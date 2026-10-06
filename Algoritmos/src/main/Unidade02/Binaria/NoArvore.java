@@ -1,16 +1,16 @@
 package Binaria;
 
-public class NoArvoreBinaria<T> {
+public class NoArvore<T> {
     private T info;
-    private NoArvoreBinaria esq;
-    private NoArvoreBinaria dir;
+    private NoArvore esq;
+    private NoArvore dir;
 
-    public NoArvoreBinaria(T info, NoArvoreBinaria esq, NoArvoreBinaria dir) {
+    public NoArvore(T info, NoArvore esq, NoArvore dir) {
         this.info = info;
         this.esq = esq;
         this.dir = dir;
     }
-    public NoArvoreBinaria(T info) {
+    public NoArvore(T info) {
         this(info, null, null);
     }
     public T getInfo() {
@@ -19,16 +19,16 @@ public class NoArvoreBinaria<T> {
     public void setInfo(T info) {
         this.info = info;
     }
-    public NoArvoreBinaria getEsq() {
+    public NoArvore getEsq() {
         return esq;
     }
-    public void setEsq(NoArvoreBinaria esq) {
+    public void setEsq(NoArvore esq) {
         this.esq = esq;
     }
-    public NoArvoreBinaria getDir() {
+    public NoArvore getDir() {
         return dir;
     }
-    public void setDir(NoArvoreBinaria dir) {
+    public void setDir(NoArvore dir) {
         this.dir = dir;
     }
 }

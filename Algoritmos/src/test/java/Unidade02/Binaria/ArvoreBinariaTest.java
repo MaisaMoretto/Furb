@@ -1,7 +1,7 @@
 package Unidade02.Binaria;
 
 import Binaria.ArvoreBinaria;
-import Binaria.NoArvoreBinaria;
+import Binaria.NoArvore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,12 +13,12 @@ class ArvoreBinariaTest {
 
     @BeforeEach
     void criarArvoreDoPlano() {
-        NoArvoreBinaria<Integer> no4 = new NoArvoreBinaria<>(4);
-        NoArvoreBinaria<Integer> no2 = new NoArvoreBinaria<>(2, null, no4);
-        NoArvoreBinaria<Integer> no5 = new NoArvoreBinaria<>(5);
-        NoArvoreBinaria<Integer> no6 = new NoArvoreBinaria<>(6);
-        NoArvoreBinaria<Integer> no3 = new NoArvoreBinaria<>(3, no5, no6);
-        NoArvoreBinaria<Integer> no1 = new NoArvoreBinaria<>(1, no2, no3);
+        NoArvore<Integer> no4 = new NoArvore<>(4);
+        NoArvore<Integer> no2 = new NoArvore<>(2, null, no4);
+        NoArvore<Integer> no5 = new NoArvore<>(5);
+        NoArvore<Integer> no6 = new NoArvore<>(6);
+        NoArvore<Integer> no3 = new NoArvore<>(3, no5, no6);
+        NoArvore<Integer> no1 = new NoArvore<>(1, no2, no3);
 
         arvore = new ArvoreBinaria<>();
         arvore.setRaiz(no1);
@@ -33,7 +33,7 @@ class ArvoreBinariaTest {
     @Test
     public void naoEstaVazia(){
         ArvoreBinaria<Integer> novaArvore = new ArvoreBinaria<>();
-        novaArvore.setRaiz(new NoArvoreBinaria<>(5));
+        novaArvore.setRaiz(new NoArvore<>(5));
         assertFalse(novaArvore.estaVazia());
     }
 

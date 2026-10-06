@@ -1,17 +1,17 @@
 package Binaria;
 
 public class ArvoreBinaria<T> {
-    private NoArvoreBinaria<T> raiz;
+    private NoArvore<T> raiz;
 
     public ArvoreBinaria() {
         this.raiz = null;
     }
 
-    public NoArvoreBinaria<T> getRaiz() {
+    public NoArvore<T> getRaiz() {
         return raiz;
     }
 
-    public void setRaiz(NoArvoreBinaria<T> raiz) {
+    public void setRaiz(NoArvore<T> raiz) {
         this.raiz = raiz;
     }
 
@@ -23,7 +23,7 @@ public class ArvoreBinaria<T> {
         return pertence(raiz, info);
     }
 
-    private boolean pertence(NoArvoreBinaria<T> no, T info){
+    private boolean pertence(NoArvore<T> no, T info){
         if (no == null){
             return false;
         } else {
@@ -37,7 +37,7 @@ public class ArvoreBinaria<T> {
         return arvorePre(raiz);
     }
 
-    private String arvorePre(NoArvoreBinaria<T> no){
+    private String arvorePre(NoArvore<T> no){
         if (no == null){
             return "<>";
         }
@@ -48,7 +48,7 @@ public class ArvoreBinaria<T> {
         return contarNos(raiz);
     }
 
-    private int contarNos(NoArvoreBinaria<T> no) {
+    private int contarNos(NoArvore<T> no) {
         if (no == null) {
             return 0;
         }
