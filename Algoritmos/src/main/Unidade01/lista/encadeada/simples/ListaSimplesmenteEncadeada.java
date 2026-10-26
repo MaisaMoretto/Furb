@@ -7,7 +7,7 @@ public class ListaSimplesmenteEncadeada<T> {
         this.primeiro = null;
     }
 
-    public NoListaSimplesmente<T> getPrimeiro() { //método getter da classe NoLista
+    public NoListaSimplesmente<T> getPrimeiro() { //método getter da classe q1.NoLista
         return primeiro; // retorna a referência do primeiro nó (ou null se vazia)
     }
 
