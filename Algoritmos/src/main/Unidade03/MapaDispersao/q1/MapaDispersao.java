@@ -1,4 +1,4 @@
-package q1;
+package MapaDispersao.q1;
 
 public class MapaDispersao<T> {
     private Lista<NoMapa<T>>[] info;

@@ -1,6 +1,4 @@
-package q1;
-
-import java.util.Objects;
+package MapaDispersao.q1;
 
 public class NoMapa<T> {
     private int chave;

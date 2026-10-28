@@ -2,8 +2,8 @@ package Unidade03.q2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import q1.MapaDispersao;
-import q2.Aluno;
+import MapaDispersao.q1.MapaDispersao;
+import MapaDispersao.q2.Aluno;
 
 import java.time.LocalDate;
 

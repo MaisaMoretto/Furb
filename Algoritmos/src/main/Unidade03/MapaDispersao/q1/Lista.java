@@ -1,4 +1,4 @@
-package q1;
+package MapaDispersao.q1;
 
 public class Lista<T> {
     private NoLista<T> primeiro;

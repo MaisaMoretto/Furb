@@ -1,4 +1,4 @@
-package q1;
+package MapaDispersaoGenerico;
 
 public class NoLista<T> {
     private T info;

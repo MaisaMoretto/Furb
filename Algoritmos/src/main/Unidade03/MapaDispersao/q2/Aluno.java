@@ -1,4 +1,4 @@
-package q2;
+package MapaDispersao.q2;
 
 import java.time.LocalDate;
 
