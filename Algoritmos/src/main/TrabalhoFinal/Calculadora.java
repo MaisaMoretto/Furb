@@ -5,13 +5,25 @@ import Pilha.PilhaLista;
 
 public class Calculadora {
 
-    //Etapa B
+    /**
+     * Etapa B
+     * Extração de termos
+     * Objetivo: extrair caracteres: números, operadores e parênteses.
+     * Os espaços devem ser descartados.
+     * Resultado para (15 + 5) / 4: fila A = (15+5)/4, com 7 termos.
+     * @param expressao
+     * @return
+     */
     public Fila<String> extrairTermos(String expressao) {
+
+        //Rejeita expressões nulas ou vazias
         if (expressao == null || expressao.trim().isEmpty()) {
             throw new IllegalArgumentException("Informe a expressão");
         }
 
+        // "termosExtraidos" é a fila A, que será devolvida ao final para prosseguir com as outras etapas
         Fila<String> termosExtraidos = new FilaLista<String>();
+
         String ultimoProcessado = null;
         int i = 0;
 
@@ -21,8 +33,7 @@ public class Calculadora {
             // Se for um espaço, ignora e vai para o próximo caractere
             if (c == ' ') {
                 i++;
-                continue;
-            }
+            } else {
 
             String termo;
 
@@ -45,6 +56,7 @@ public class Calculadora {
             termosExtraidos.inserir(termo);
             ultimoProcessado = termo;
         }
+    }
         return termosExtraidos;
     }
 
@@ -107,6 +119,37 @@ public class Calculadora {
         return termo.equals("+") || termo.equals("-") || termo.equals("*") || termo.equals("/");
     }
 
+    //Etapa D
+    public double calcularExpressaoPosfixada(Fila<String> expressaoPosfixada){
+        Pilha<Double> pilha = new PilhaLista<Double>();
+
+        while (!expressaoPosfixada.estaVazia()){
+            String termo = expressaoPosfixada.retirar();
+
+            if (eOperador(termo)){
+                if (pilha.estaVazia()){
+                    throw new IllegalArgumentException("Expressão inválida");
+                }
+                double b = pilha.pop();
+                if (pilha.estaVazia()){
+                    throw new IllegalArgumentException("Expressão inválida.");
+                }
+                double a = pilha.pop(); // operando da esquerda
+                pilha.push(aplicar(termo.charAt(0), a, b));
+            } else {
+                pilha.push(Double.parseDouble(termo.replace(',', '.')));
+            }
+        }
+        if (pilha.estaVazia()){
+            throw new IllegalArgumentException("Expressão inválida.");
+        }
+        double resultado = pilha.pop();
+        if (!pilha.estaVazia()){
+            throw new IllegalArgumentException("Expressão inválida.");
+        }
+        return resultado;
+    }
+
     /**
      * O "-" na expressão será de um número negativo apenas se vier no começo da expressão, depois de um operador ou
      * após a abertura de um parênteses
@@ -131,5 +174,23 @@ public class Calculadora {
             return 2;
         }
         return 1;
+    }
+
+    private double aplicar(char operador, double a, double b) {
+        switch (operador) {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                if (b == 0) {
+                    throw new ArithmeticException("Divisão por zero.");
+                }
+                return a / b;
+            default:
+                throw new IllegalArgumentException("Operador desconhecido: " + operador);
+        }
     }
 }
