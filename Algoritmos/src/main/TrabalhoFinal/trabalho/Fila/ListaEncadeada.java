@@ -1,4 +1,4 @@
-package Fila;
+package trabalho.Fila;
 
 public class ListaEncadeada<T> {
     private NoLista<T> primeiro;

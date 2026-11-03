@@ -1,6 +1,6 @@
 package OrdenacaoBolhaQuicksort;
 
-public abstract class OrdenacaoAbstract<T> {
+public abstract class OrdenacaoAbstract<T extends Comparable<T>> {
     private T[] info;
 
     public T[] getInfo() {

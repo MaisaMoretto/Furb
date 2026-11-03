@@ -1,4 +1,4 @@
-package Pilha;
+package trabalho.Pilha;
 
 public class PilhaCheiaException extends RuntimeException {
   public PilhaCheiaException() {

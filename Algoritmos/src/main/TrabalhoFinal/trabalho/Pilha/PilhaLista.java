@@ -1,4 +1,4 @@
-package Pilha;
+package trabalho.Pilha;
 
 public class PilhaLista<T> implements Pilha<T> {
     private ListaSimplesmenteEncadeada<T> lista;

@@ -1,4 +1,4 @@
-package Fila;
+package trabalho.Fila;
 
 public class FilaVaziaException extends RuntimeException {
   public FilaVaziaException() {

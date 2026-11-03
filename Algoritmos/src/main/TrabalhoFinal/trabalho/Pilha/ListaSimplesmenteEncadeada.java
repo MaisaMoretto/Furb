@@ -1,4 +1,4 @@
-package Pilha;
+package trabalho.Pilha;
 
 public class ListaSimplesmenteEncadeada<T> {
     private NoListaSimplesmente<T> primeiro;

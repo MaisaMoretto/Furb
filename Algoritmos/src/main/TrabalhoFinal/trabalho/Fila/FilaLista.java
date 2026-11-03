@@ -1,4 +1,4 @@
-package Fila;
+package trabalho.Fila;
 
 public class FilaLista<T> implements Fila<T> {
     private ListaEncadeada<T> lista = new ListaEncadeada<T>();

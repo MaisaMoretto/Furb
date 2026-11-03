@@ -2,6 +2,10 @@ package OrdenacaoBolhaQuicksort;
 
 public class OrdenacaoQuickSort <T extends Comparable<T>> extends OrdenacaoAbstract<T>{
 
+    /**
+     *
+     */
+
     @Override
     public void ordenar() {
         int n = getInfo().length - 1;

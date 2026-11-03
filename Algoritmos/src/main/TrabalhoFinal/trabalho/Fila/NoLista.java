@@ -1,19 +1,19 @@
-package Pilha;
+package trabalho.Fila;
 
-public class NoListaSimplesmente<T> {
+public class NoLista<T> {
     private T info;
-    private NoListaSimplesmente<T> proximo;
+    private NoLista<T> proximo;
 
-    public NoListaSimplesmente(T info) {
+    public NoLista(T info) {
         this.info = info;
         this.proximo = null;
     }
 
-    public NoListaSimplesmente<T> getProximo() {
+    public NoLista<T> getProximo() {
         return proximo;
     }
 
-    public void setProximo(NoListaSimplesmente<T> proximo) {
+    public void setProximo(NoLista<T> proximo) {
         this.proximo = proximo;
     }
 

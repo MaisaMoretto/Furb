@@ -1,7 +1,6 @@
-package TrabalhoFinal;
-
-import Fila.Fila;
+package trabalho;
 import org.junit.jupiter.api.Test;
+import trabalho.Fila.Fila;
 
 import static org.junit.jupiter.api.Assertions.*;
 

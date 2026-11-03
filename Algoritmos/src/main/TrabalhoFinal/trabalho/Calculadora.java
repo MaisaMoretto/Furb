@@ -1,7 +1,9 @@
-import Fila.Fila;
-import Fila.FilaLista;
-import Pilha.Pilha;
-import Pilha.PilhaLista;
+package trabalho;
+
+import trabalho.Fila.Fila;
+import trabalho.Fila.FilaLista;
+import trabalho.Pilha.Pilha;
+import trabalho.Pilha.PilhaLista;
 
 public class Calculadora {
 
