@@ -1,0 +1,17 @@
+Anotação: método *compareTo*
+
+    -> obj1.compareTo(obj2)
+        * obj1 < ob2 => deve devolver negativo
+        * obj1 > ob2 => deve devolver positivo
+        * obj1 < ob2 => deve devolver zero
+
+Exemplo:
+    Aluno1: matricula 123
+    Aluno2: matricula 1
+
+Matricula(Aluno1).compareTo(Matricula(Aluno2)) =
+    Retornará: positivo
+
+Matricula(Aluno2).compareTo(Matricula(Aluno1)) =
+    Retornará: negativo
+
