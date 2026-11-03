@@ -1,4 +1,4 @@
-package Unidade03.q2;
+package Unidade03;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

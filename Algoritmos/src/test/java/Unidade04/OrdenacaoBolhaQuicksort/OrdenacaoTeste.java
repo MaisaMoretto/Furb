@@ -1,4 +1,4 @@
-package OrdenacaoBolhaQuicksort;
+package Unidade04.OrdenacaoBolhaQuicksort;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
