@@ -162,7 +162,6 @@ public class Calculadora {
         return ultimoProcessado == null || eOperador(ultimoProcessado) || ultimoProcessado.equals("(");
     }
 
-    // Devolve a posição logo depois do último caractere do número
     private int fimDoNumero(String s, int inicio) {
         int j = inicio;
         while (j < s.length() && (eDigito(s.charAt(j)) || s.charAt(j) == ',')) {
@@ -188,7 +187,7 @@ public class Calculadora {
                 return a * b;
             case '/':
                 if (b == 0) {
-                    throw new ArithmeticException("Divisão por zero.");
+                    throw new ArithmeticException("Erro: Divisão por zero");
                 }
                 return a / b;
             default:
