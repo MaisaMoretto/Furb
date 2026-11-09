@@ -8,8 +8,8 @@ class CalculadoraTest {
     private double calcular(String expressao) {
         Calculadora c = new Calculadora();
         Fila<String> infixada = c.extrairTermos(expressao);
-        Fila<String> posfixada = c.gerarExpressaoPosfixada(infixada);
-        return c.calcularExpressaoPosfixada(posfixada);
+        Fila<String> posfixada = c.gerarExprPosfixada(infixada);
+        return c.calcularExprPosfixada(posfixada);
     }
 
     private String filaParaTexto(Fila<String> fila) {
@@ -33,10 +33,10 @@ class CalculadoraTest {
     @Test
     public void gerarPosfixada() {
         Calculadora c = new Calculadora();
-        assertEquals("15 5 + 3 /", filaParaTexto(c.gerarExpressaoPosfixada(c.extrairTermos("(15 + 5) / 3"))));
-        assertEquals("15 5 3 / +", filaParaTexto(c.gerarExpressaoPosfixada(c.extrairTermos("15 + 5 / 3"))));
-        assertEquals("20 5 + 8 2 - / 3 *", filaParaTexto(c.gerarExpressaoPosfixada(c.extrairTermos("(20 + 5) / (8 - 2) * 3"))));
-        assertEquals("2 1 10 2 / + *", filaParaTexto(c.gerarExpressaoPosfixada(c.extrairTermos("2 * (1 + (10 / 2))"))));
+        assertEquals("15 5 + 3 /", filaParaTexto(c.gerarExprPosfixada(c.extrairTermos("(15 + 5) / 3"))));
+        assertEquals("15 5 3 / +", filaParaTexto(c.gerarExprPosfixada(c.extrairTermos("15 + 5 / 3"))));
+        assertEquals("20 5 + 8 2 - / 3 *", filaParaTexto(c.gerarExprPosfixada(c.extrairTermos("(20 + 5) / (8 - 2) * 3"))));
+        assertEquals("2 1 10 2 / + *", filaParaTexto(c.gerarExprPosfixada(c.extrairTermos("2 * (1 + (10 / 2))"))));
     }
 
     @Test

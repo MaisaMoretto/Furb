@@ -7,23 +7,13 @@ import trabalho.Pilha.PilhaLista;
 
 public class Calculadora {
 
-    /**
-     * Etapa B
-     * Extração de termos
-     * Objetivo: extrair caracteres: números, operadores e parênteses.
-     * Os espaços devem ser descartados.
-     * Resultado para (15 + 5) / 4: fila A = (15+5)/4, com 7 termos.
-     * @param expressao
-     * @return
-     */
+    //Etapa B
     public Fila<String> extrairTermos(String expressao) {
 
-        //Rejeita expressões nulas ou vazias
         if (expressao == null || expressao.trim().isEmpty()) {
             throw new IllegalArgumentException("Informe a expressão");
         }
 
-        // "termosExtraidos" é a fila A, que será devolvida ao final para prosseguir com as outras etapas
         Fila<String> termosExtraidos = new FilaLista<String>();
 
         String ultimoProcessado = null;
@@ -32,25 +22,21 @@ public class Calculadora {
         while (i < expressao.length()) {
             char c = expressao.charAt(i);
 
-            // Se for um espaço, ignora e vai para o próximo caractere
             if (c == ' ') {
                 i++;
             } else {
 
             String termo;
 
-            // Valida o número negativo
             if (eDigito(c) || (c == '-' && sinalEhNegativo(ultimoProcessado))) {
                 int fim = fimDoNumero(expressao, i + 1);
                 termo = expressao.substring(i, fim);
                 i = fim;
 
-                //Verifica se é operador ou parênteses
             } else if (c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')') {
-                termo = String.valueOf(c);
+                termo = "" + c;
                 i++;
 
-                // Se não se enquadrar nos if's anteriores, a expressão é inválida
             } else {
                 throw new IllegalArgumentException("Caractere inválido '" + c + "'");
             }
@@ -63,15 +49,14 @@ public class Calculadora {
     }
 
     //Etapa C
-    public Fila<String> gerarExpressaoPosfixada(Fila<String> exprInfixada) {
-        Pilha<String> pilhaB = new PilhaLista<String>();   // pilha responsável por guardar os operadores e parênteses
-        Fila<String> filaC = new FilaLista<String>();      // resultado (pós-fixada)
+    public Fila<String> gerarExprPosfixada(Fila<String> exprInfixada) {
+        Pilha<String> pilhaB = new PilhaLista<String>();
+        Fila<String> filaC = new FilaLista<String>();
 
         while (!exprInfixada.estaVazia()) {
             String termo = exprInfixada.retirar();
 
             if (eOperador(termo)) {
-                // tira da pilha os operadores com precedência igual ou maior
                 while (!pilhaB.estaVazia() && eOperador(pilhaB.peek())
                         && precedencia(pilhaB.peek()) >= precedencia(termo)) {
                     filaC.inserir(pilhaB.pop());
@@ -96,12 +81,10 @@ public class Calculadora {
                 }
 
             } else {
-                // é um operando (número)
                 filaC.inserir(termo);
             }
         }
 
-        // enquanto sobrar algo na pilha B, será passado para a fila C
         while (!pilhaB.estaVazia()) {
             String topo = pilhaB.pop();
             if (topo.equals("(")) {
@@ -122,7 +105,7 @@ public class Calculadora {
     }
 
     //Etapa D
-    public double calcularExpressaoPosfixada(Fila<String> expressaoPosfixada){
+    public double calcularExprPosfixada(Fila<String> expressaoPosfixada){
         Pilha<Double> pilha = new PilhaLista<Double>();
 
         while (!expressaoPosfixada.estaVazia()){
@@ -136,7 +119,7 @@ public class Calculadora {
                 if (pilha.estaVazia()){
                     throw new IllegalArgumentException("Expressão inválida.");
                 }
-                double a = pilha.pop(); // operando da esquerda
+                double a = pilha.pop();
                 pilha.push(aplicar(termo.charAt(0), a, b));
             } else {
                 pilha.push(Double.parseDouble(termo.replace(',', '.')));

@@ -39,14 +39,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         MostrarResultado = new javax.swing.JTextField();
         Calcular = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         InserirExpressaoNum.addActionListener(this::InserirExpressaoNumActionPerformed);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel1.setText("Insira a expressão numérica a ser calculada");
+        jLabel1.setText("Expressão:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel2.setText("Resultado:");
@@ -58,8 +57,6 @@ public class TelaCalculadora extends javax.swing.JFrame {
         Calcular.setText("Calcular");
         Calcular.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         Calcular.addActionListener(this::CalcularActionPerformed);
-
-        jLabel3.setText("Alunos: Maísa Gabriela Moretto, Vinícius de Senna");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,15 +75,10 @@ public class TelaCalculadora extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MostrarResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(jLabel3)))
+                .addGap(145, 145, 145)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MostrarResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 145, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -102,9 +94,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MostrarResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jLabel3)
-                .addContainerGap())
+                .addGap(57, 57, 57))
         );
 
         pack();
@@ -135,15 +125,14 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JTextField MostrarResultado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
     private void calcular(){
         try {
             Calculadora c = new Calculadora();
             Fila<String> termosInfixada = c.extrairTermos(tratarPontuacao());
-            Fila<String> termosPosfixada = c.gerarExpressaoPosfixada(termosInfixada);
-            double resultado = c.calcularExpressaoPosfixada(termosPosfixada);
+            Fila<String> termosPosfixada = c.gerarExprPosfixada(termosInfixada);
+            double resultado = c.calcularExprPosfixada(termosPosfixada);
             MostrarResultado.setText(formatarResultado(resultado));
         } catch (Exception e) {
             MostrarResultado.setText("");
