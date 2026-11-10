@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex - Grid - Responsividade</title>
+    <style>
+        @media screen and (max-width: 600px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            .grid-container {
+                grid-template-columns: auto;
+            }
+            #menu-compacto {
+                display: block;
+            }
+            #menu-estendido {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .flex-container {
+                flex-direction: row;
+            }
+            .grid-container {
+                grid-template-columns: auto auto auto;
+            }
+            #menu-compacto {
+                display: none;
+            }
+            #menu-estendido {
+                display: block;
+            }
+        }
+
+
+        .flex-container {
+            background-color: green;
+            display: flex;
+            /*flex-direction: column;*/
+            flex-wrap: wrap;
+            justify-content: space-evenly;/*space-between;/*space-around;/*center; /*alinhamento horizontal*/
+            align-items: center; /*alinhamento vertical*/
+            /*height: 50vh;*/
+        }
+        .flex-container > div {
+            background-color: lightgray;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .grid-container {
+            background-color: blue;
+            display: grid;
+            gap: 5px;
+            /*grid-template-columns: 70px 70px 70px;/*1fr 2fr 1fr;/*25% 50% 25%;/*auto auto auto;*/
+            justify-content: space-evenly;/*space-between;/*space-around;/*center; /*alinhamento horizontal*/
+            /*align-content: space-evenly;/*space-between;/*space-around;/*center; /*alinhamento vertical*/
+            /*height: 50vh;*/   
+        }
+        .grid-container > div {
+            background-color: lightgray;
+            padding: 10px;
+            text-align: center;
+        }
+        #menu-compacto {
+            background-color: lightblue;
+        }
+        #menu-estendido {
+            background-color: lightgreen;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav id="menu-compacto">
+        Menu compacto
+    </nav>
+    <nav id="menu-estendido">
+        Menu estendido
+    </nav>
+   <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-basis: 100px;">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+   </div>
+   <div class="grid-container">
+        <!--div style="grid-column: 1 / span 2;"--><div>1</div>
+        <div>2</div>
+        <!--div style="grid-column: 2; grid-row: 2 / span 2;"--><div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+   </div>
+</body>
+</html>

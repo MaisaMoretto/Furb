@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+
+$corPadrao: royalblue;
+
+header {
+    background-color: $corPadrao;
+}
+footer {
+    background-color: $corPadrao;
+}
+
+nav {
+    background-color: aqua;
+
+    a {
+        text-decoration: none;
+    }
+
+    > menu {
+        background-color: aquamarine;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    li {
+        display: inline-block;
+    }
+}
+
+@mixin estilo1 {
+    color: red;
+    font-size: 1.2em;
+}
+
+.destaque {
+    font-weight: bold;
+    @include estilo1;
+}
+
+article {
+    background-color: lightgreen;
+    @include estilo1;
+}
+
+.botao-default {
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-sucesso {
+    background-color: lightgreen;
+    @extend .botao-default;
+}
+
+.botao-alerta {
+    background-color: lightcoral;
+    @extend .botao-default;
+}

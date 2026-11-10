@@ -1,0 +1,116 @@
+:root {
+    --cor-login: skyblue;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.classe1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+input.classe1 {
+    font-size: 1.5em;
+}
+
+.classe2 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#login {
+    background-color: var(--cor-login);
+}
+
+ul li:last-child {
+    text-decoration: underline;
+}
+
+ol li:first-child {
+    color: blue;
+}
+
+table.tabela tr:first-child {
+    font-weight: bold;
+}
+
+/*table.tabela tr:nth-child(4) {*/
+/*table.tabela tr:nth-child(odd) {*/
+/*table.tabela tr:nth-child(even) {*/
+/*table.tabela tr:nth-child(3n) {*/
+table.tabela tr:nth-child(3n+1) {
+    background-color: lightgray;
+}
+
+table.tabela tr:hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+table.tabela td:active {
+    background-color: lightcoral;
+}
+
+input {
+    border-width: 0;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+input[type="text"] {
+    background-color: yellow;
+    border-bottom: 0.8px solid gray;
+}
+
+input[type="password"] {
+    background-color: red;
+    border-bottom: 1px solid black;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"] {
+    border-bottom: 1px solid red;
+}
+
+a[target="_blank"] {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.botao {
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.botao:hover {
+    text-decoration: underline;
+    background-color: blue;
+}
+
+.botao:active {
+    background-color: red;
+    color: yellow;
+}

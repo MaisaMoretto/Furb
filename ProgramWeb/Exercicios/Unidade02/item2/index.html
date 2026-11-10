@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 2</title>
+</head>
+<body>
+  <h1>Exercício 2</h1>
+
+  <input type="text" id="campo">
+  <button onclick="mostrarTamanho()">Tamanho</button>
+
+  <p id="eco"></p>
+  <p id="tamanho"></p>
+
+  <script>
+    const campo = document.getElementById("campo");
+
+    campo.addEventListener("input", function () {
+      document.getElementById("eco").textContent = campo.value;
+    });
+
+    function mostrarTamanho() {
+      document.getElementById("tamanho").textContent =
+        "O tamanho atual do campo é de: " + campo.value.length;
+    }
+  </script>
+</body>
+</html>

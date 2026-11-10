@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Patinhas Fofinhas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="imagens/Logo.png" alt="Logotipo Patinhas Fofinhas">
+            <span>Patinhas Fofinhas</span>
+        </a>
+        <div id="area-usuario">Usuário não autenticado</div>
+    </header>
+    <nav>
+        <menu class="menu_principal">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#">Adote</a></li>
+            <li><a href="#">Ajude</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a>
+                <menu class="submenu">
+                    <li><a href="#">Maísa Gabriela Moretto</a></li>
+                    <li><a href="#">Vinícius de Senna</a></li>
+                </menu>
+            </li>
+            <li><a class="item-login" href="login.html">LOGIN</a></li>
+        </menu>
+    </nav>
+    <main class="centro">
+        <section class="cartao">
+            <h1>Login</h1>
+            <form action="index.html" method="get">
+                <div class="campo">
+                    <label for="login">Login</label>
+                    <input type="text" id="login" autofocus required>
+                </div>
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required>
+                </div>
+                <button type="submit" class="botao" onclick="autenticar()">Autenticar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        Integrantes: Maísa Gabriela Moretto, Vinícius de Senna
+    </footer>
+    <script>
+        mostraUsuario();
+    </script>
+</body>
+</html>

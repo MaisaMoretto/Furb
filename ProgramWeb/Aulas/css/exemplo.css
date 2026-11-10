@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: royalblue;
+}
+
+footer {
+  background-color: royalblue;
+}
+
+nav {
+  background-color: aqua;
+}
+nav a {
+  text-decoration: none;
+}
+nav > menu {
+  background-color: aquamarine;
+}
+nav > menu li {
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+
+.destaque {
+  font-weight: bold;
+  color: red;
+  font-size: 1.2em;
+}
+
+article {
+  background-color: lightgreen;
+  color: red;
+  font-size: 1.2em;
+}
+
+.botao-default, .botao-alerta, .botao-sucesso {
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-sucesso {
+  background-color: lightgreen;
+}
+
+.botao-alerta {
+  background-color: lightcoral;
+}/*# sourceMappingURL=exemplo.css.map */

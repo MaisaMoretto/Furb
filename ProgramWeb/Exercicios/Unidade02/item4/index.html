@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 4</title>
+  <style>
+    /* a) */
+    #comidas li:first-child { font-size: 2em; }
+    #comidas li:last-child { font-size: 0.8em; }
+
+    /* b) */
+    #caixa:hover { background-color: orange; }
+
+    /* c) */
+    table { border-collapse: collapse; }
+    td { border: 1px solid black; padding: 6px 12px; }
+    tr:nth-child(odd) { background-color: silver; }
+  </style>
+</head>
+<body>
+  <h1>Exercício 4</h1>
+
+  <h2>a)</h2>
+  <ul id="comidas">
+    <li>Lasanha</li>
+    <li>Churrasco</li>
+    <li>Pizza</li>
+    <li>Feijoada</li>
+    <li>Sorvete</li>
+  </ul>
+
+  <h2>b)</h2>
+  <div id="caixa">
+    <p>Passe o mouse sobre este texto para mudar a cor de fundo.</p>
+  </div>
+
+  <h2>c)</h2>
+  <table id="tabela"></table>
+
+  <script>
+    document.querySelectorAll("#comidas li").forEach(function (li) {
+      li.addEventListener("click", function () {
+        alert(li.textContent);
+      });
+    });
+
+    const tabela = document.getElementById("tabela");
+    for (let l = 1; l <= 10; l++) {
+      const tr = tabela.insertRow(-1);
+      for (let c = 1; c <= 3; c++) {
+        const td = tr.insertCell(-1);
+        td.textContent = "L" + l + " C" + c;
+        td.addEventListener("click", function () {
+          td.style.backgroundColor = "red";
+        });
+      }
+    }
+  </script>
+</body>
+</html>

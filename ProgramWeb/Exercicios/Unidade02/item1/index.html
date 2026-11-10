@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 1</title>
+</head>
+<body>
+  <h1>Exercício 1</h1>
+
+  <input type="number" id="num1">
+  <input type="number" id="num2">
+  <br><br>
+
+  <button onclick="somar()">Somar</button>
+  <p id="resultadoSoma"></p>
+
+  <button onclick="comparar()">Comparar</button>
+  <p id="resultadoComparacao"></p>
+
+  <script>
+    function lerNumeros() {
+      return [
+        parseFloat(document.getElementById("num1").value),
+        parseFloat(document.getElementById("num2").value)
+      ];
+    }
+
+    function somar() {
+      const [a, b] = lerNumeros();
+      const saida = document.getElementById("resultadoSoma");
+      if (isNaN(a) || isNaN(b)) {
+        saida.textContent = "Preencha os dois números.";
+        return;
+      }
+      saida.textContent = "Soma: " + (a + b);
+    }
+
+    function comparar() {
+      const [a, b] = lerNumeros();
+      const saida = document.getElementById("resultadoComparacao");
+      if (isNaN(a) || isNaN(b)) {
+        saida.textContent = "Preencha os dois números.";
+        saida.style.backgroundColor = "";
+        return;
+      }
+      if (a > b) {
+        saida.textContent = "Primeiro número é maior";
+        saida.style.backgroundColor = "red";
+      } else if (b > a) {
+        saida.textContent = "Segundo número é maior";
+        saida.style.backgroundColor = "green";
+      } else {
+        saida.textContent = "Ambos são iguais";
+        saida.style.backgroundColor = "yellow";
+      }
+    }
+  </script>
+</body>
+</html>

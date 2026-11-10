@@ -1,0 +1,218 @@
+@font-face {
+    font-family: minhaFonte;
+    src: url('../fonts/HennyPenny-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    background-color: lightblue;
+    font-size: 2em;
+    padding: 10px;
+    font-weight: bold;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    background-color: aquamarine;
+    padding: 5px;
+}
+
+nav menu {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: royalblue;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav li {
+    list-style: none;
+}
+
+.menu_principal > li {
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.menu_principal > li:hover .submenu {
+    /*display: block;*/
+    visibility: visible;
+}
+
+.submenu {
+    /*display: none;*/
+    visibility: hidden;
+    background-color: aquamarine;
+    position: fixed;
+    z-index: 9;
+    padding: 8px;
+}
+
+main {
+    margin-bottom: 40px;
+}
+
+.exemplo1{ 
+    border: 1px solid black;
+    background-color: yellow;
+
+    position: relative;
+    left: 30px;
+    top: 30px;
+    width: 80%;
+    z-index: 9;
+}
+
+.pai {
+    border: 1px solid black;
+    background-color: green;
+    width: 75%;
+    height: 50vh;
+
+    position: relative;
+}
+
+.filho {
+    border: 1px solid black;
+    background-color: red;
+    width: 50%;
+    height: 25vh;
+
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+.container {
+    position: relative;
+}
+
+.container div {
+    background-color: white;
+    padding: 10px;
+}
+
+.leg1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.leg2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.leg3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.leg4 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.leg5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+footer {
+    font-family: minhaFonte;
+
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75em;
+    padding: 8px;
+    text-align: center;
+
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+.petit-formal-script-regular {
+  font-family: "Petit Formal Script", cursive;
+  font-weight: bolder;
+  font-size: 2em;
+  font-style: normal;
+}
+
+@keyframes minhaAnimacao {
+    from {
+        width: 100px;
+        height: 100px;
+    }
+    to {
+        width: 500px;
+        height: 200px;
+    }
+}
+
+.animacao {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.animacao:hover {
+    /*width: 500px;
+    height: 200px;*/
+    animation: minhaAnimacao 3s infinite;
+}
+
+@keyframes minhaAnimacao2 {
+    0% {
+        top: 0px;
+        left: 0px;
+        background-color: yellow;
+    }
+    25% {
+        top: 0px;
+        left: 500px;
+        background-color: blue;
+    }
+    50% {
+        top: 200px;
+        left: 500px;
+        background-color: green;
+    }
+    75% {
+        top: 200px;
+        left: 0px;
+        background-color: red;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        background-color: yellow;
+    }
+}
+
+.animacao2 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: relative;
+    animation: minhaAnimacao2 10s ease-in-out infinite;
+    z-index: 20;
+}

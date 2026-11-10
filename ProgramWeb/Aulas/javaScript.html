@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .classe1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: lightgreen;
+        }
+        .classe2 {
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h4>JavaScript</h4>
+    <script>
+        x = 5;
+        var y = 6;
+        const cidade = 'Blumenau';
+
+        /* Operadores aritméticos */
+        z = x + y;
+        z = x - y;
+        z = x * y;
+        z = x / y;
+        z = x ** 2;
+        z = y % x;
+        z = Math.sqrt(x);
+        x += y; // -= *= /= **= %=
+        x++;
+        y--;
+
+        /* Operadores de comparação e lógicos */
+        x = 5;
+        y = 6;
+        if (x > y) {
+            console.log('x é maior que y');
+        } else {
+            console.log('x é menor que y');
+        }
+        // x > y ; x < y ; x >= y ; x <= y
+        if (x == y) {
+            console.log('x é igual a y');
+        }
+        if (x != y) {
+            console.log('x é diferente de y');
+        }
+        x = 5;
+        y = '5';
+        if (x == y) {
+            console.log('x é igual a y');
+        }
+        x = 1;
+        y = true;
+        if (x == y) {
+            console.log('x ainda é igual a y');
+        }
+        if (x === y) {
+            console.log('x é novamente igual a y');
+        }
+        if (x !== y) {
+            console.log('x e y tem os mesmos valores, mas de tipos diferentes');
+        }
+        /*
+        && - AND
+        || - OR
+        ! - NOT
+        */
+        funcao1();
+        function funcao1() {
+            console.log('funcao1 invocada!');
+        }
+        funcao1();
+
+        function funcao2(pParam1) {
+            return pParam1 * 2;
+        }
+        console.log(funcao2(4));
+
+        function fMultiplica(p1, p2) {
+            return p1 * p2;
+        }
+        console.log(fMultiplica(4,5));
+
+        vExterna = 5;
+        console.log('Valor de vExterna é '+vExterna);
+        function funcao3() {
+            vExterna = 'Blumenau';
+        }
+        console.log('Valor de vExterna é '+vExterna);
+        funcao3();
+        console.log('Valor de vExterna agora é '+vExterna);
+
+        console.log('Valor de vExterna é '+vExterna);
+        function funcao4() {
+            var vExterna = [1,2,3];
+            console.log('Valor de vExterna dentro da função é '+vExterna);
+            vNova = 1;
+        }
+        console.log('Valor de vExterna é '+vExterna);
+        funcao4();
+        console.log('Valor de vExterna é '+vExterna);
+
+        for (let ind = 0; ind < vExterna.length; ind++) {
+            console.log('vExterna['+ind+'] => '+vExterna[ind]);
+        }
+        var vInd = 0;
+        while(vInd < vExterna.length) {
+            console.log('vExterna['+vInd+'] => '+vExterna[vInd]);
+            vInd++;
+        }
+
+        function alteraDiv() {
+            var vElemento = document.getElementById('mensagem');
+            vElemento.innerHTML = 'Novo texto';
+        }
+
+        //document.getElementById('mensagem').innerHTML = 'Conteúdo inicial';
+    </script>
+    <div>
+        <button onclick="alteraDiv()">Clique aqui!</button>
+    </div>
+    <div id="mensagem"></div>
+    <div id="ola">Olá, mundo!</div>
+    <p>
+        <button onclick="alteraCor()">Altera cor</button>
+        <button onclick="ativaClasse1()">Ativa classe1</button>
+        <button onclick="ativaClasse2()">Ativa classe2</button>
+        <button onclick="removeClasse1()">Remove classe1</button>
+        <button onclick="toggleClasse2()">On/Off classe2</button>
+    </p>
+    <p>
+        <h4>Lista de tarefas</h4>
+        <input type="text" name="" id="tarefa" placeholder="Informe a tarefa">
+        <button onclick="addTarefa()">Adiciona tarefa (final)</button>
+        <button onclick="addInicio()">Adiciona tarefa (início)</button>
+        <ul id="lista"></ul>
+        <button onclick="removeUltimo()">Remove último</button>
+        <button onclick="removePrimeiro()">Remove primeiro</button>
+    </p>
+    <p>
+        <table id="tabela">
+            <tr>
+                <th>Col1</th>
+                <th>Col2</th>
+                <th>Col3</th>
+            </tr>
+        </table>
+        <div>
+            <button onclick="insLinha()">Insere linha</button>
+            <button onclick="delLinha()">Deleta linha</button>
+        </div>
+    </p>
+    <script>
+        function delLinha() {
+            var vTable = document.getElementById('tabela');
+            vTable.deleteRow(-1);
+        }
+        function insLinha() {
+            var vTable = document.getElementById('tabela');
+            var vLinha = vTable.insertRow();
+            var vCell1 = vLinha.insertCell();
+            vCell1.innerHTML = 'Val1';
+            var vCell2 = vLinha.insertCell();
+            vCell2.innerHTML = 'Val2';
+            var vCell3 = vLinha.insertCell();
+            vCell3.innerHTML = 'Val3';
+        }
+        function removePrimeiro() {
+            var vLista = document.getElementById('lista');
+            vLista.removeChild(vLista.firstChild);
+        }
+        function removeUltimo() {
+            document.getElementById('lista').removeChild(document.getElementById('lista').lastChild);
+        }
+        function addInicio() {
+            var vInput = document.getElementById('tarefa');
+            var vLista = document.getElementById('lista');
+            var vItem = document.createElement('li');
+            vItem.innerHTML = vInput.value;
+            vLista.insertBefore(vItem,vLista.firstChild);
+        }
+        function addTarefa() {
+            var vInput = document.getElementById('tarefa');
+            var vLista = document.getElementById('lista');
+            var vItem = document.createElement('li');
+            vItem.innerHTML = vInput.value;
+            vLista.appendChild(vItem);
+        }
+        function toggleClasse2() {
+            var vElemento = document.getElementById('ola');
+            vElemento.classList.toggle('classe2');
+        }
+        function removeClasse1() {
+            var vElemento = document.getElementById('ola');
+            vElemento.classList.remove('classe1');
+        }
+        function ativaClasse2() {
+            var vElemento = document.getElementById('ola');
+            vElemento.classList.add('classe2');
+        }
+        function ativaClasse1() {
+            var vElemento = document.getElementById('ola');
+            vElemento.classList.add('classe1');
+        }
+        function alteraCor() {
+            var vElemento = document.getElementById('ola');
+            vElemento.style.backgroundColor = "yellow";
+            vElemento.style.fontWeight = 'bold';
+        }
+
+        document.getElementById('mensagem').innerHTML = 'Valor inicial';
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Patinhas Fofinhas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="imagens/Logo.png" alt="Logotipo Patinhas Fofinhas">
+            <span>Patinhas Fofinhas</span>
+        </a>
+        <div id="area-usuario">Usuário não autenticado</div>
+    </header>
+    <nav>
+        <menu class="menu_principal">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#">Adote</a></li>
+            <li><a href="#">Ajude</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a>
+                <menu class="submenu">
+                    <li><a href="#">Maísa Gabriela Moretto</a></li>
+                    <li><a href="#">Vinícius de Senna</a></li>
+                </menu>
+            </li>
+            <li><a class="item-login" href="login.html">LOGIN</a></li>
+        </menu>
+    </nav>
+    <main>
+        <h1>Cadastro de adotante</h1>
+        <br><br>
+
+        <section class="opcoes-estilo">
+            <h4>Estilo da página</h4>
+            <input type="radio" name="estilo" id="estilo-default" value="default" checked onclick="trocaEstilo('default')">
+            <label for="estilo-default">default</label>
+            <input type="radio" name="estilo" id="estilo-custom" value="custom" onclick="trocaEstilo('custom')">
+            <label for="estilo-custom">custom</label>
+        </section>
+
+        <form id="formulario" class="form-cadastro" action="index.html" method="get">
+            <div class="grade">
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="campo">
+                    <label for="nascimento">Data de nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </div>
+                <div class="campo">
+                    <label for="moradia">Tipo de moradia</label>
+                    <select id="moradia" name="moradia">
+                        <option value="casa-quintal" selected>Casa com quintal</option>
+                        <option value="casa">Casa sem quintal</option>
+                        <option value="apto">Apartamento</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <h4>Pelagem de preferência</h4>
+                    <div>
+                        <input type="radio" name="pelagem" id="pelo1" value="curto" checked>
+                        <label for="pelo1">Curta</label>
+                        <input type="radio" name="pelagem" id="pelo2" value="duro">
+                        <label for="pelo2">Dura</label>
+                        <input type="radio" name="pelagem" id="pelo3" value="longo">
+                        <label for="pelo3">Longa</label>
+                    </div>
+                </div>
+                <div class="campo">
+                    <h4>Sobre a sua casa</h4>
+                    <div>
+                        <input type="checkbox" name="casa" id="casa1" value="pets">
+                        <label for="casa1">Tenho outros pets</label><br>
+                        <input type="checkbox" name="casa" id="casa2" value="criancas">
+                        <label for="casa2">Moro com crianças</label><br>
+                        <input type="checkbox" name="casa" id="casa3" value="experiencia">
+                        <label for="casa3">Já tive um dachshund</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="botao">Enviar dados</button>
+        </form>
+    </main>
+    <footer>
+        Integrantes: Maísa Gabriela Moretto, Vinícius de Senna
+    </footer>
+    <script>
+        mostraUsuario();
+    </script>
+</body>
+</html>

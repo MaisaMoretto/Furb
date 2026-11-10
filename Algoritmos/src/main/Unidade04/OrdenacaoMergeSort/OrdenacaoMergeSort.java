@@ -17,7 +17,6 @@ public class OrdenacaoMergeSort<T extends Comparable<T>> extends OrdenacaoAbstra
         }
     }
 
-    @SuppressWarnings("unchecked")
     private void merge(int inicio, int fim, int meio) {
         int tamEsquerda = meio - inicio + 1;
         T[] esquerda = (T[]) new Comparable[tamEsquerda];
@@ -49,7 +48,6 @@ public class OrdenacaoMergeSort<T extends Comparable<T>> extends OrdenacaoAbstra
             }
         }
 
-        // continua usando o valor de "i" do laço anterior
         while (cEsq < tamEsquerda) {
             getInfo()[i] = esquerda[cEsq];
             cEsq++;

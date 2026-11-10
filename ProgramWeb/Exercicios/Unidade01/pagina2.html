@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício HTML – parte 2</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        Formulário
+    </header>
+    <form>
+        <p>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" placeholder="Informe seu nome">
+        </p>
+        <p>
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
+        </p>
+        <p>
+            <label for="nascimento">Data de nascimento: </label>
+            <input type="date" name="nascimento" id="nascimento">
+        </p>
+        <p>
+            <label for="idade">Idade: </label>
+            <input type="number" name="idade" id="idade" min="0" max="120">
+        </p>
+        <p>
+            <label for="telefone">Telefone: </label>
+            <input type="tel" name="telefone" id="telefone" placeholder="(00) 00000-0000">
+        </p>
+        <p>
+            <label for="comentario">Comentário: </label><br>
+            <textarea name="comentario" id="comentario" cols="40" rows="5"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
