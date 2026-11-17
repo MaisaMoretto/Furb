@@ -1,0 +1,12 @@
+footer {
+    background-color: var(--marrom);
+    color: var(--fundo);
+    font-size: 0.85em;
+    padding: 12px 16px;
+    text-align: center;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

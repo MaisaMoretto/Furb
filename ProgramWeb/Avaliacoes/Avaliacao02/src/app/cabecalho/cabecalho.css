@@ -1,0 +1,59 @@
+:host {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header {
+    background-color: var(--fundo);
+    border-bottom: 4px solid var(--cobre);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--marrom);
+    font-family: 'Fredoka', 'Trebuchet MS', Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.logo img {
+    height: 52px;
+}
+
+.logo span {
+    font-family: 'Fredoka', 'Trebuchet MS', Verdana, sans-serif;
+}
+
+.area-usuario {
+    font-size: 0.9em;
+    color: var(--marrom);
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        font-size: 1.1em;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+    .area-usuario {
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .logo span {
+        display: none;
+    }
+}

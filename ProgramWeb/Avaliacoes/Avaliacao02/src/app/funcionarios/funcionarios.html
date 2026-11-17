@@ -1,0 +1,8 @@
+<div class="centro">
+    <h1>Funcionários</h1>
+</div>
+<section class="lista">
+    @for (funcionario of funcionarios; track funcionario.id) {
+        <app-card [funcionario]="funcionario" />
+    }
+</section>

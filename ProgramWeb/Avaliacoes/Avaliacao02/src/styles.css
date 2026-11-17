@@ -1,0 +1,27 @@
+:root {
+    --fundo: #fbf9ed;
+    --marrom: #5b2f14;
+    --cobre: #c36238;
+    --botao: #a84f26;
+    --ambar: #f0a04b;
+    --texto: #3f2312;
+    --borda: #e3d3bb;
+}
+
+body {
+    margin: 0;
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-family: 'Fredoka', 'Trebuchet MS', Verdana, sans-serif;
+    color: var(--marrom);
+    border-bottom: 6px solid var(--cobre);
+    display: inline-block;
+    padding: 0 0 6px 0;
+}
