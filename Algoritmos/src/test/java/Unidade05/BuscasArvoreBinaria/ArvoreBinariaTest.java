@@ -1,6 +1,6 @@
 package Unidade05.BuscasArvoreBinaria;
 
-import BuscasArvoreBinaria.ArvoreBinariaBusca;
+import BuscasArvoreBinaria.BuscaArvoreBinaria;
 import BuscasArvoreBinaria.NoArvore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ class ArvoreBinariaTest {
 
     @Test
     public void inserir(){
-        ArvoreBinariaBusca<Integer> arvore = new ArvoreBinariaBusca<>();
+        BuscaArvoreBinaria<Integer> arvore = new BuscaArvoreBinaria<>();
         arvore.inserir(50);
         arvore.inserir(30);
         arvore.inserir(70);
@@ -28,18 +28,20 @@ class ArvoreBinariaTest {
 
     @Test
     public void removerFolha(){
-        ArvoreBinariaBusca<Integer> arvore = new ArvoreBinariaBusca<>();
+        BuscaArvoreBinaria<Integer> arvore = new BuscaArvoreBinaria<>();
         arvore.inserir(50);
         arvore.inserir(30);
         arvore.inserir(25);
         arvore.inserir(40);
 
-        //verificar método de remoção na terça
+        arvore.retirar(40);
+        assertEquals("<50<30<25<><>><>><>>", arvore.toString());
+
     }
 
     @Test
     public void removerNoUmFilho(){
-        ArvoreBinariaBusca<Integer> arvore = new ArvoreBinariaBusca<>();
+        BuscaArvoreBinaria<Integer> arvore = new BuscaArvoreBinaria<>();
         arvore.inserir(80);
         arvore.inserir(52);
         arvore.inserir(90);
@@ -48,16 +50,18 @@ class ArvoreBinariaTest {
         arvore.inserir(63);
         arvore.inserir(67);
 
-        //verificar método de remoção na terça - conteúdo n apresentado
-    }
+        arvore.retirar(71);
+        assertEquals("<80<52<48<><>><63<><67<><>>>><90<><>>>", arvore.toString());
+
+        }
 
 
     //TESTES DE BUSCA - não solicitado na lista
-    private ArvoreBinariaBusca<Integer> arvore;
+    private BuscaArvoreBinaria<Integer> arvore;
 
     @BeforeEach
     public void montarArvore() {
-        arvore = new ArvoreBinariaBusca<>();
+        arvore = new BuscaArvoreBinaria<>();
         arvore.inserir(50);
         arvore.inserir(30);
         arvore.inserir(70);
@@ -77,7 +81,7 @@ class ArvoreBinariaTest {
 
     @Test
     public void testarBuscarArvoreVazia() {
-        ArvoreBinariaBusca<Integer> vazia = new ArvoreBinariaBusca<>();
+        BuscaArvoreBinaria<Integer> vazia = new BuscaArvoreBinaria<>();
         assertEquals(null, vazia.buscar(50));
     }
 
